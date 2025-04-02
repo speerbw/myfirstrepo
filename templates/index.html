@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Flappy Bird</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="game-container">
+            <canvas id="game-canvas" width="320" height="480"></canvas>
+            <div id="start-screen" class="screen">
+                <h1>Flappy Bird</h1>
+                <button id="start-button">Start Game</button>
+                <button id="high-scores-button">High Scores</button>
+            </div>
+            <div id="game-over-screen" class="screen">
+                <h2>Game Over</h2>
+                <p>Your Score: <span id="final-score">0</span></p>
+                <div id="score-submit">
+                    <input type="text" id="player-name" placeholder="Your Name" maxlength="15">
+                    <button id="submit-score">Submit Score</button>
+                </div>
+                <button id="restart-button">Play Again</button>
+                <button id="menu-button">Main Menu</button>
+            </div>
+            <div id="high-scores-screen" class="screen">
+                <h2>High Scores</h2>
+                <div id="scores-list"></div>
+                <button id="back-button">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/sprite_generator.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html> 
